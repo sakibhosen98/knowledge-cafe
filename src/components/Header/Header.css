@@ -1,0 +1,20 @@
+.header{
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+.header h2{
+  font-weight: 700;
+}
+nav.header a{
+  text-decoration: none;
+  margin-left: 30px;
+  color: #111111;
+  font-weight: 500;
+}
+nav.header a:hover{
+  color:tomato;
+}
