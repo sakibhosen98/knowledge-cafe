@@ -1,0 +1,18 @@
+.author-name{
+  font-weight: 700;
+  color: red;
+}
+.publishDate{
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(231, 15, 15, 0.938);
+}
+.title{
+  color: rgb(17, 206, 17);
+  font-weight: 700;
+}
+.link{
+  font-weight: 700;
+  color: rgb(6, 107, 56);
+  cursor: pointer;
+}

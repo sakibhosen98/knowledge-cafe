@@ -1,26 +1,38 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import './SingleCard.css';
 
+
 const SingleCard = (props) => {
-  console.log(props)
-  const {name, url, profile_pic, date, id} = props.author;
+  const {Author_Image,Images,title,Read_time,Publish_date,Author_name,id} = props.author;
+  const handleAddToCart = props.handleAddToCart;
+  
+  // const handleAddToCart=(author)=>{
+  //   console.log(author)
+  // }
+
   return (
     <div>
-        <div>
+        <div className='card mt-3'>
           <div>
             <img 
-            className="w-100" src={url} alt="" />
+            className="w-100" src={Images} alt="" />
           </div>
-          <div className='d-flex align-items-center gap-3 mt-3'>
-            <img className='profile-img' src={profile_pic} alt="" />
+          <div className='d-flex justify-content-between align-items-center'>
+            <div className='d-flex align-items-center gap-3 mt-3'>
+              <img className='profile-img' src={Author_Image} alt="" />
+              <div>
+                <h5 className="author-name"> {Author_name} </h5>
+                <p className='publishDate'>{Publish_date}</p>
+              </div>
+            </div>
             <div>
-              <h5 className=''> {name} </h5>
-              <p>{date} </p>
+                <span>{Read_time} min read <FontAwesomeIcon onClick={()=> handleAddToCart(props.author)} icon={faBookmark} /></span>
             </div>
           </div>
-          <h3>Title: {id} </h3>
-          <p>des: </p>
-          <p><a href="">Mark as read</a></p>
+          <h4 className='title'>Title: {title} </h4>
+          <p className='link' >Mark as read</p>
       </div>
     </div>
   );
