@@ -4,6 +4,10 @@ import Header from './components/Header/Header'
 import Home from './components/Home/Home';
 import Sidebar from './components/SideBar/Sidebar';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function App() {
 
@@ -21,6 +25,7 @@ function App() {
       </div>
       <hr></hr>
         <Home></Home>
+        <ToastContainer></ToastContainer>
     </div>
   )
 }

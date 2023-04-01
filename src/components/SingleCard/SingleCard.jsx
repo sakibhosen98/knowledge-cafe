@@ -5,7 +5,7 @@ import './SingleCard.css';
 
 
 const SingleCard = (props) => {
-  const {Author_Image,Images,title,Read_time,Publish_date,Author_name,id} = props.author;
+  const {Author_Image,Images,title,Read_time,Publish_date,Author_name} = props.author;
   const handleAddToCart = props.handleAddToCart;
   const handleBookMark = props.handleBookMark;
   
