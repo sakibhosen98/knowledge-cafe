@@ -40,7 +40,7 @@ const Home = () => {
         }
       </div>
       <div className='col-md-4 mt-3'>
-        <h4 className='card'>Spent time on read :  min</h4>
+        <h4 className='card'>Spent time on read : {readTime} min</h4>
         <div className='card'>
             <h4 className='bookMark'>Bookmarked Blogs: {cart.length} </h4>
             {
