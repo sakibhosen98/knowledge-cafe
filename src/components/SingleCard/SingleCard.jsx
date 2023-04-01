@@ -7,6 +7,7 @@ import './SingleCard.css';
 const SingleCard = (props) => {
   const {Author_Image,Images,title,Read_time,Publish_date,Author_name,id} = props.author;
   const handleAddToCart = props.handleAddToCart;
+  const handleBookMark = props.handleBookMark;
   
   // const handleAddToCart=(author)=>{
   //   console.log(author)
@@ -32,7 +33,7 @@ const SingleCard = (props) => {
             </div>
           </div>
           <h4 className='title'>Title: {title} </h4>
-          <p className='link' >Mark as read</p>
+          <p className='link' onClick={()=>handleBookMark(props.author.Read_time)} >Mark as read</p>
       </div>
     </div>
   );

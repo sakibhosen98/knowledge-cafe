@@ -5,8 +5,11 @@ import SingleCard from '../SingleCard/SingleCard';
 import './Home.css';
 
 const Home = () => {
+
     const [authors, setAuthors] = useState([]);
     const [cart, setCart] = useState([]);
+    const [readTime, setReadTime] = useState(0);
+
     useEffect( ()=> {
       fetch("data.json")
       .then(res => res.json())
@@ -18,6 +21,11 @@ const Home = () => {
       setCart(newCart);
     }
 
+    const handleBookMark = (time) =>{
+      const newReadTime = readTime + parseInt(time);
+      setReadTime(newReadTime);
+    }
+
   return (
     <>
       <div className='row'>
@@ -27,17 +35,18 @@ const Home = () => {
             author={author}
             key={author.id}
             handleAddToCart={handleAddToCart}
+            handleBookMark = {handleBookMark}
             ></SingleCard>)
         }
       </div>
-      <div className='col-md-4'>
-        {/* <Sidebar cart={cart}></Sidebar> */}
-        <h4 className='card'>Spent time on read : 0 min</h4>
+      <div className='col-md-4 mt-3'>
+        <h4 className='card'>Spent time on read :  min</h4>
         <div className='card'>
             <h4 className='bookMark'>Bookmarked Blogs: {cart.length} </h4>
             {
               cart.map(SingleCard=> <p className='single-title'>{SingleCard.title}</p>)
             }
+            
         </div>
       </div>
     </div>
