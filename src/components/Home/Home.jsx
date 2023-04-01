@@ -3,7 +3,6 @@ import Question from '../Question/Question';
 import Sidebar from '../SideBar/Sidebar';
 import SingleCard from '../SingleCard/SingleCard';
 import './Home.css';
-import { ToastContainer, toast } from 'react-toastify';
 
 
 const Home = () => {
@@ -28,10 +27,6 @@ const Home = () => {
       setReadTime(newReadTime);
     }
 
-    const handleToast = () =>{
-      toast("Wow so easy!");
-    }
-
   return (
     <>
       <div className='row'>
@@ -42,7 +37,6 @@ const Home = () => {
             key={author.id}
             handleAddToCart={handleAddToCart}
             handleBookMark = {handleBookMark}
-            handleToast = {handleToast}
             ></SingleCard>)
         }
       </div>

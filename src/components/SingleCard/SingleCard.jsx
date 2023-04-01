@@ -2,16 +2,17 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBookmark } from '@fortawesome/free-solid-svg-icons'
 import './SingleCard.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const SingleCard = (props) => {
   const {Author_Image,Images,title,Read_time,Publish_date,Author_name} = props.author;
   const handleAddToCart = props.handleAddToCart;
   const handleBookMark = props.handleBookMark;
-  
-  // const handleAddToCart=(author)=>{
-  //   console.log(author)
-  // }
+
+  const handleToast = () =>{
+    toast("Wow so easy!");
+  }
 
   return (
     <div>
@@ -29,7 +30,7 @@ const SingleCard = (props) => {
               </div>
             </div>
             <div>
-                <span>{Read_time} min read <FontAwesomeIcon onClick={()=> handleAddToCart(props.author)} icon={faBookmark} /></span>
+                <span onClick={handleToast}>{Read_time} min read <FontAwesomeIcon onClick={()=> handleAddToCart(props.author)} icon={faBookmark} /></span>
             </div>
           </div>
           <h4 className='title'>Title: {title} </h4>
